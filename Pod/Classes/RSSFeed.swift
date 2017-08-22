@@ -1,3 +1,6 @@
+
+
+
 //
 //  RSSFeed.swift
 //  AlamofireRSSParser
@@ -30,7 +33,7 @@ open class RSSFeed: CustomStringConvertible {
     open var items: [RSSItem] = Array()
     
     open var description: String {
-        return "title: \(self.title)\nfeedDescription: \(self.feedDescription)\nlink: \(self.link)\npubDate: \(self.pubDate)\nlastBuildDate: \(self.lastBuildDate)\nlanguage: \(self.language)\ncopyright: \(self.copyright)\nmanagingEditor: \(self.managingEditor)\nwebMaster: \(self.webMaster)\ngenerator: \(self.generator)\ndocs: \(self.docs)\nttl: \(self.ttl)\nitems: \n\(self.items)"
+        return "title: \(String(describing: self.title))\nfeedDescription: \(String(describing: self.feedDescription))\nlink: \(String(describing: self.link))\npubDate: \(String(describing: self.pubDate))\nlastBuildDate: \(String(describing: self.lastBuildDate))\nlanguage: \(String(describing: self.language))\ncopyright: \(String(describing: self.copyright))\nmanagingEditor: \(String(describing: self.managingEditor))\nwebMaster: \(String(describing: self.webMaster))\ngenerator: \(String(describing: self.generator))\ndocs: \(String(describing: self.docs))\nttl: \(String(describing: self.ttl))\nitems: \n\(self.items)"
     }
     
 }
