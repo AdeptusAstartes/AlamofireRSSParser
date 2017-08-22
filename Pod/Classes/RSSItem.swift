@@ -63,21 +63,25 @@ open class RSSItem: CustomStringConvertible {
     fileprivate func imagesFromHTMLString(_ htmlString: String) -> [String] {
         let htmlNSString = htmlString as NSString;
         var images: [String] = Array();
+        var imgTags: [String] = Array();
         
-        do {
-            let regex = try NSRegularExpression(pattern: "(https?)\\S*(png|jpg|jpeg|gif)", options: [NSRegularExpression.Options.caseInsensitive])
+        let regex = try? NSRegularExpression(pattern: "<img\\s.+?/>", options: [NSRegularExpression.Options.caseInsensitive])
+        if let result = regex?.matches(in: htmlString, options: .reportProgress, range: NSMakeRange(0, htmlString.characters.count)) {
+            imgTags += result.map { htmlNSString.substring(with: $0.range) }
+        }
         
-            regex.enumerateMatches(in: htmlString, options: [NSRegularExpression.MatchingOptions.reportProgress], range: NSMakeRange(0, htmlString.characters.count)) { (result, flags, stop) -> Void in
-                if let range = result?.range {
-                    images.append(htmlNSString.substring(with: range))  //because Swift ranges are still completely ridiculous
+        imgTags.forEach { imgTag in
+            let regex = try? NSRegularExpression(pattern: "src\\s?=\\s?\".+?\"", options: [NSRegularExpression.Options.caseInsensitive])
+            if let result = regex?.matches(in: imgTag, options: .reportProgress, range: NSMakeRange(0, imgTag.characters.count)) {
+                images += result.map {
+                    let src = (imgTag as NSString).substring(with: $0.range).replacingOccurrences(of: " ", with: "")
+                    let from = src.index(src.startIndex, offsetBy: "src=\"".characters.count)
+                    let to = src.index(src.endIndex, offsetBy: -1)
+                    return src.substring(with: from..<to)
                 }
             }
         }
         
-        catch {
-            
-        }
-        
-        return images;
+        return images
     }
 }
