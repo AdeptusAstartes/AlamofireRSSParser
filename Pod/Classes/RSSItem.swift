@@ -15,6 +15,7 @@ import Foundation
 open class RSSItem: CustomStringConvertible {
     open var title: String? = nil
     open var link: String? = nil
+    open var categories = [String]()
     
     /**
         Upon setting this property the `itemDescription` will be scanned for HTML and all image urls will be extracted and stored in `imagesFromDescription`
