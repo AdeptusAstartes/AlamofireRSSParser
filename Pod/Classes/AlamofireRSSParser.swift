@@ -22,7 +22,7 @@ public final class RSSResponseSerializer: ResponseSerializer {
     public let emptyResponseCodes: Set<Int>
     public let emptyRequestMethods: Set<HTTPMethod>
 
-    public init(dataPreprocessor: DataPreprocessor = JSONResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Set<Int> = JSONResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Set<HTTPMethod> = JSONResponseSerializer.defaultEmptyRequestMethods) {
+    public init(dataPreprocessor: DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Set<Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Set<HTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods) {
         self.dataPreprocessor = dataPreprocessor
         self.emptyResponseCodes = emptyResponseCodes
         self.emptyRequestMethods = emptyRequestMethods
