@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (5.1.0)
-  - AlamofireRSSParser (2.3.0):
+  - Alamofire (5.6.2)
+  - AlamofireRSSParser (2.4.0):
     - Alamofire (~> 5.0)
 
 DEPENDENCIES:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
-  AlamofireRSSParser: ced366c481685cb6ed24e6d50b7b7a5a47c2da6d
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  AlamofireRSSParser: dab86644d4d220b313767c33ef09e7acf11f641a
 
 PODFILE CHECKSUM: 8523def88c0f8a0aa15e6b30525ff47cbc01d09c
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3
