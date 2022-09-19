@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
+        "version" : "5.6.2"
+      }
+    },
+    {
+      "identity" : "alamofirerssparser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AdeptusAstartes/AlamofireRSSParser.git",
+      "state" : {
+        "branch" : "updates",
+        "revision" : "e0c7b025dc7018fd8ace91418ff02808fc50e2d9"
+      }
+    }
+  ],
+  "version" : 2
+}
